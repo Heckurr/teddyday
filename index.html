@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Teddy Day Ishu 🧸❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+
+body{
+    background:radial-gradient(circle at top,#3a1c71,#000428);
+    color:#fce4ec;
+    overflow-x:hidden;
+}
+
+/* LOCK SCREEN */
+#lockScreen{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.lock-box{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(12px);
+    padding:40px;
+    border-radius:30px;
+    width:90%;
+    max-width:360px;
+    text-align:center;
+    box-shadow:0 0 60px rgba(255,255,255,0.2);
+}
+.lock-box h1{color:#ffd1ff;}
+.lock-box input{
+    width:100%;
+    padding:12px;
+    border-radius:15px;
+    border:none;
+    margin:15px 0;
+}
+.lock-box button{
+    padding:10px 30px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(45deg,#ff9a9e,#fad0c4);
+    cursor:pointer;
+}
+#error{color:#ffb6c1;font-size:0.9rem;}
+
+/* CONTENT */
+#content{display:none;animation:fade 1.8s forwards;}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+.container{
+    padding:50px 20px;
+    text-align:center;
+    position:relative;
+    z-index:1;
+}
+
+h1{
+    font-size:2.8rem;
+    color:#ffd1ff;
+    text-shadow:0 0 20px rgba(255,255,255,0.3);
+    margin-bottom:10px;
+}
+
+/* TOGGLE BUTTONS */
+.toggle{
+    margin:25px 0;
+}
+.toggle button{
+    margin:5px;
+    padding:8px 18px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:rgba(255,255,255,0.2);
+    color:white;
+}
+
+/* PHOTO AREA */
+.photo-wrap{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin:35px 0;
+}
+.card{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    overflow:hidden;
+    border:4px solid #ffb6c1;
+    box-shadow:0 0 30px rgba(255,182,193,0.6);
+}
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* NOTE */
+.message{
+    max-width:780px;
+    margin:45px auto;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    padding:40px;
+    border-radius:30px;
+    line-height:2.1;
+    font-size:1.15rem;
+}
+
+/* TEDDY RAIN */
+.teddy{
+    position:fixed;
+    top:-50px;
+    width:40px;
+    animation:fall linear forwards;
+    z-index:0;
+}
+@keyframes fall{
+    to{transform:translateY(110vh) rotate(360deg);opacity:0;}
+}
+
+/* SECRET POPUP */
+#secret{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.75);
+    z-index:10;
+    justify-content:center;
+    align-items:center;
+}
+.secret-box{
+    background:linear-gradient(180deg,#41295a,#2f0743);
+    padding:35px;
+    border-radius:30px;
+    max-width:380px;
+    text-align:center;
+    animation:pop 0.8s ease;
+}
+@keyframes pop{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}
+.secret-box button{
+    margin-top:18px;
+    padding:10px 25px;
+    border:none;
+    border-radius:25px;
+    background:linear-gradient(45deg,#ff9a9e,#fad0c4);
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔒 LOCK -->
+<div id="lockScreen">
+    <div class="lock-box">
+        <h1>🧸 One Cozy Secret</h1>
+        <p>Only Ishu can open this ❤️</p>
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="unlock()">Unlock ✨</button>
+        <p id="error"></p>
+    </div>
+</div>
+
+<!-- 💖 CONTENT -->
+<div id="content">
+    <div class="container">
+        <h1>Happy Teddy Day Ishu 🧸❤️</h1>
+
+        <div class="toggle">
+            <button onclick="showHer()">Her ❤️</button>
+            <button onclick="showTeddy()">Teddy 🧸</button>
+            <button onclick="showBoth()">Both 💕</button>
+        </div>
+
+        <div class="photo-wrap">
+            <div class="card" id="herPic">
+                <img src="ishu.jpg">
+            </div>
+            <div class="card" id="teddyPic">
+                <img src="teddy.jpg">
+            </div>
+        </div>
+
+        <!-- ❤️ REAL ROMANTIC NOTE -->
+        <div class="message">
+        I know this is Teddy Day, and this teddy is supposed to be soft, warm, and comforting…  
+        but honestly, every time I think about comfort, my mind goes straight to you.
+
+        There’s something about you that makes everything feel easier.  
+        Your presence calms me in ways I can’t explain,  
+        like the world slows down a little whenever you’re around.
+
+        Some days I just want to sit quietly with you —  
+        no talking, no phones, no noise —  
+        just knowing you’re there, close enough to feel real.  
+        That feeling means more to me than you probably realize.
+
+        This teddy can be hugged when I miss you,  
+        but it’s only a reminder of what I really want —  
+        your warmth, your closeness,  
+        the way you make me feel at home without even trying.
+
+        You’re not just someone I love…  
+        you’re my comfort on tired days,  
+        my smile on normal days,  
+        and my peace on the days I don’t talk much.
+
+        If I could give you one thing today,  
+        it wouldn’t just be a teddy —  
+        it would be the promise that  
+        no matter how busy life gets,  
+        no matter where we are,  
+        you’ll always have a place with me.
+
+        Happy Teddy Day, Ishu.  
+        Always yours. 🧸❤️
+        </div>
+
+        <p>✨ Tap anywhere for magic 🧸✨</p>
+    </div>
+</div>
+
+<!-- 💝 SECRET -->
+<div id="secret">
+    <div class="secret-box">
+        <h2>One last thing…</h2>
+        <p>
+            I don’t need a teddy when I have you.  
+            You’re already everything I look for when I need comfort ❤️
+        </p>
+        <button onclick="closeSecret()">Come here 🫶</button>
+    </div>
+</div>
+
+<script>
+const pass="japish";
+let clicks=0,shown=false;
+
+function unlock(){
+    if(password.value===pass){
+        lockScreen.style.display="none";
+        content.style.display="block";
+    }else error.innerText="Wrong 😌 try again";
+}
+
+function showHer(){
+    herPic.style.display="block";
+    teddyPic.style.display="none";
+}
+function showTeddy(){
+    herPic.style.display="none";
+    teddyPic.style.display="block";
+}
+function showBoth(){
+    herPic.style.display="block";
+    teddyPic.style.display="block";
+}
+
+document.addEventListener("click",()=>{
+    if(content.style.display==="block"){
+        clicks++;
+
+        for(let i=0;i<6;i++){
+            let t=document.createElement("img");
+            t.src="teddy.png";
+            t.className="teddy";
+            t.style.left=(Math.random()*100)+"%";
+            t.style.animationDuration=(3+Math.random()*3)+"s";
+            document.body.appendChild(t);
+            setTimeout(()=>t.remove(),6000);
+        }
+
+        if(clicks>=7 && !shown){
+            shown=true;
+            secret.style.display="flex";
+        }
+    }
+});
+
+function closeSecret(){
+    secret.style.display="none";
+}
+</script>
+
+</body>
+</html>
